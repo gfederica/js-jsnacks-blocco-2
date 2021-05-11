@@ -4,8 +4,6 @@
 // Stampare a schermo la bici con peso minore.
 
 
-var pesoBiciclette = [];
-
 var biciclette = [
     {
         nome: "bicicletta_1",
@@ -29,10 +27,13 @@ var biciclette = [
     }
 ]
 
+var biciLeggera = biciclette[0];
+
 for (var i = 0; i<biciclette.length; i++) {
     var bicicletta = biciclette[i];
-    var pesoUnita = bicicletta.peso;
-    pesoBiciclette.push(bicicletta.peso);    
-}
 
-console.log(Math.min(...pesoBiciclette));
+    if (bicicletta.peso < biciLeggera.peso) {
+        biciLeggera = bicicletta;
+    } 
+}
+console.log(biciLeggera);
